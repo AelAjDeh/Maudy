@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+   <html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+      <!--=============== CSS ===============-->
+      <link rel="stylesheet" href="style.css">
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+      <title>Organik</title>
+
+      <style>
+      
+      /* agar web smooth */
+      html{
+      scroll-behavior: smooth;
+      }         
+
+      *{
+          box-sizing: border-box;
+          padding: 0;
+          margin: 0;
+          font-family: popins,sans-serif;
+          text-decoration: none;
+      }
+
+      body{
+          font-family: "Poppins", sans-serif;
+          overflow-x: hidden;
+          background-color: #ffffff;
+      }
+
+      .hero-header {
+        width: 100%; 
+        height: 100%;
+        min-height: 100vh;
+        background: #ffffff;
+      }
+
+      .wrapper{
+          width: 1280px;
+          max-width: 95%;
+          margin: 0 auto;
+          padding: 0 ;
+      }
+
+      header{
+          padding: 40px 0 30px;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          flex-wrap: wrap;
+      }
+
+      .navbar{
+          background-color: #627432;
+      }
+
+      .navbar-brand-me-auto{
+          width: 70px;
+      }
+
+      .login-button {
+          background-color: #d7cc6d;
+          color: #000000;
+          font-size: 14px;
+          padding: 8px 20px;
+          border-radius: 50px;
+          text-decoration: none;
+          transition: 0.3s background-color;
+      }
+
+      .login-button:hover {
+            background-color: #ada44e;
+      }
+
+      .navbar-toggler {
+          border: none;
+          font-size: 1.25rem;
+          
+      }
+
+      .navbar-toggler:focus, .btn-clos:focus {
+          box-shadow: none;
+          outline: none;
+      }
+
+      .nav-link {
+          color: #ffffff;
+          font-size: 500;
+          position: relative;
+      }
+
+      .nav-link:hover, .nav-link.active {
+          color: #dbdada;
+      }
+
+      .nav-link::before{
+          content: "";
+          position: absolute;
+          bottom: 0;
+          left: 50%;
+          transform: translateX(-50%);
+          width: 0;
+          height: 2px;
+          background-color: #e6de98;
+          visibility: hidden;
+          transition: 0.3s ease-in-out;
+      }
+
+      .nav-link:hover::before, .nav-link.active::before{
+          width: 100%;
+          visibility: visible;
+      }
+
+         /* table */
+         * {
+         margin: 0;
+         padding: 0;
+         box-sizing: border-box;
+         font-family: sans-serif;
+         }
+
+         /* responsif */
+         @media print {
+         .table, .table__body {
+         overflow: visible;
+         
+         }
+         }
+
+
+         html, body{
+            height: 100%;
+            margin: 0;
+            padding: 0;
+         }
+        
+
+         main.table {
+            display: flex;
+            width: 82vw;
+            background-color: #627432;
+            backdrop-filter: blur(7px);
+            box-shadow: 0 .4rem .8rem #0005;
+            border-radius: .8rem;
+            justify-content: center;
+            align-items: center;
+            margin: 0 auto;
+            position: relative;
+
+         }
+
+         .table__body {
+            width: 95%;
+            max-height: calc(89% - 1.6rem);
+            background-color: #fffb;
+
+            margin: .8rem auto;
+            border-radius: .6rem;
+
+            overflow: auto;
+            overflow: overlay;
+         }
+
+         .table__body::-webkit-scrollbar{
+            width: 0.5rem;
+            height: 0.5rem;
+         }
+
+         .table__body::-webkit-scrollbar-thumb{
+            border-radius: .5rem;
+            background-color: #0004;
+            visibility: hidden;
+         }
+
+         .table__body:hover::-webkit-scrollbar-thumb{ 
+            visibility: visible;
+         }
+
+         table {
+            width: 100%;
+         }
+
+         table, th, td {
+            border-collapse: collapse;
+            padding: 1rem;
+            text-align: left;
+         }
+
+         thead th {
+            position: sticky;
+            top: 0;
+            left: 0;
+            background-color: #627432d6;
+            cursor: pointer;
+            text-transform: capitalize;
+         }
+
+         tbody tr:nth-child(even) {
+            background-color: #0000000b;
+         }
+
+         /* btn formulir & beranda */
+         .button-container-form {
+            margin-top: 50px;
+            justify-content: center;
+            width: 100%;
+            align-items: center;
+            display: flex;
+            
+         }
+
+         .btn-anorganik-form {
+            width: 300px;
+            background-color: #627432;
+            color: white;
+            border: none;
+            border-radius: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+         }
+
+         .btn-anorganik-form:hover {
+            background-color: #505e28;
+         }
+
+         </style>
+         
+
+   </head>
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+   <body>
+
+      <div class="hero-header">
+         <div class="wrapper">
+             <header>
+                 
+                     <nav class="navbar navbar-expand-lg fixed-top">
+                         <div class="container-fluid">
+                           <a class="navbar-brand me-auto" href="../UUK2/assets/img/logo.png">eco wise bank</a>
+                           
+                           <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel" style="transition: 3s; background-color: #627432a0;">
+                             <div class="offcanvas-header">
+                               <h5 class="offcanvas-title" id="offcanvasNavbarLabel" style="color: #ffffff;">eco wise bank</h5>
+                               <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close" style="color: #ffffff;"></button>
+                             </div>
+                             <div class="offcanvas-body">
+                               <ul class="navbar-nav justify-content-center flex-grow-1 pe-3">
+                                 <li class="nav-item">
+                                   <a class="nav-link mx-lg-2" aria-current="page" style="color: #ffffff;" href="index.html">Beranda</a>
+                                 </li>
+                                 <li class="nav-item">
+                                   <a class="nav-link mx-lg-2" href="about.html">About</a>
+                                 </li>
+                                 <li class="nav-item">
+                                   <a class="nav-link mx-lg-2" href="alamat.html">alamat</a>
+                                 </li>
+                                 <li class="nav-item">
+                                   <a class="nav-link mx-lg-2" href="sheet.html">Kritik & Saran</a>
+                                 </li>
+                               </ul>
+                             </div>
+                           </div>
+                           <a href="../UUK2/admin/login.html" class="login-button">Admin</a>
+                           <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar"aria-label="Toggle navigation">
+                             <span class="navbar-toggler-icon"></span>
+                           </button>
+                         </div>
+                     </nav>
+
+   <section>                
+      <div class="container" style="margin-bottom: 120px;">
+         <div class="card__container">
+            <article class="card__article">
+               <img src="../UUK2/assets/img/sisamakanan.jpg" alt="image" class="card__img" style="height: 230px;">
+
+               <div class="card__data">
+                  <span class="card__description">Sampah Organik</span>
+                  <h2 class="card__title">Sisa Makanan</h2>
+               </div>
+            </article>
+
+            <article class="card__article">
+               <img src="../UUK2/assets/img/sisabuah.jpg" alt="image" class="card__img">
+
+               <div class="card__data">
+                  <span class="card__description">Sampah Organik</span>
+                  <h2 class="card__title">Sisa Kulit Buah</h2>
+               </div>
+            </article>
+
+            <article class="card__article">
+               <img src="../UUK2/assets/img/sisasayur.jpg" alt="image" class="card__img">
+
+               <div class="card__data">
+                  <span class="card__description">Sampah Organik</span>
+                  <h2 class="card__title">Sisa Sayur - Sayuran</h2>
+               </div>
+            </article>
+
+            <article class="card__article">
+              <img src="../UUK2/assets/img/daunkering.jpg" alt="image" class="card__img" style="height: 230px;">
+
+              <div class="card__data">
+                 <span class="card__description">Sampah Organik</span>
+                 <h2 class="card__title">Daun Kering</h2>
+              </div>
+           </article>
+
+           <article class="card__article">
+            <img src="../UUK2/assets/img/rotan.jpg" alt="image" class="card__img">
+
+            <div class="card__data">
+               <span class="card__description">Sampah Organik</span>
+               <h2 class="card__title">Rotan</h2>
+            </div>
+         </article>
+
+         <article class="card__article">
+          <img src="../UUK2/assets/img/ranting.jpg" alt="image" class="card__img" style="max-height: 230px;">
+
+          <div class="card__data">
+             <span class="card__description">Sampah Organik</span>
+             <h2 class="card__title">Ranting Pohon Kering</h2>
+          </div>
+       </article>
+         </div>
+      </div>
+   </section> 
+   
+   
+         
+      <!-- table -->
+      
+      <main class="table" id="customers_table">
+         <section class="table__header">
+            
+         </section>
+         <section class="table__body">
+             <table>
+                 <thead>
+                     <tr>
+                         <th> No </th>
+                         <th> Jenis Sampah</th>
+                         <th>UOM </th>
+                         <th>Deskripsi</th>
+                         <th>Harga</th>
+                     </tr>
+                 </thead>
+                 <tbody>
+                     <tr>
+                         <td> 1 </td>
+                         <td> Sisa Makanan </td>
+                         <td> Kg</td>
+                         <td> Sisa makanan rumah tangga dalam kondisi bersih</td>
+                         <td> <strong> Rp 4.000</strong></td>
+                     </tr>
+                     <tr>
+                         <td> 2 </td>
+                         <td> Sisa Kulit Buah </td>
+                         <td> Kg </td>
+                         <td> Kulit buah - buahan dalam kondisi bersih dan baik</td>
+                         <td> <strong>Rp 5.000</strong> </td>
+                     </tr>
+                     <tr>
+                         <td> 3</td>
+                         <td> Sisa Sayur sayuran </td>
+                         <td> Kg </td>
+                         <td> Sisa sayur - sayuran dari dapur </td>
+                         <td> <strong>Rp 4.500</strong> </td>
+                     </tr>
+                     <tr>
+                         <td> 4</td>
+                         <td> Daun Kering</td>
+                         <td> Kg </td>
+                         <td> Dedaunan kering dan bersih dari plastik </td>
+                         <td> <strong>Rp 5.500</strong> </td>
+                     </tr>
+                     <tr>
+                         <td> 5</td>
+                         <td> Rotan </td>
+                         <td> Kg </td>
+                         <td> Sampah rotan, bersih dari plastik </td>
+                         <td> <strong>Rp 4.000</strong> </td>
+                     </tr>
+                     <tr>
+                         <td> 6</td>
+                         <td> Ranting Pohon</td>
+                         <td> Kg </td>
+                         <td> Ranting Pohon yang bersih dari sampah plastik </td>
+                         <td> <strong>Rp 3.500</strong> </td>
+                     </tr>
+                     
+                 </tbody>
+             </table>
+         </section>
+     </main>
+     <!-- btn formulir & beranda -->
+     <div class="button-container-form">
+      <a href="../UUK2/form/form_or.html"><button class="btn-anorganik-form" style="margin-right: 10px;">Isi Formulir</button></a>
+      <a href="index.html"><button class="btn-anorganik-form">Beranda</button></a>
+      </div>
+
+     <script src="script.js"></script>
+   </body>
+</html>

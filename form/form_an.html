@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Penjualan Sampah</title>
+    <link rel="stylesheet" href="form.css">
+
+    
+</head>
+<body>
+
+    
+
+    <div class="form-container">
+        <h1>Penjualan Sampah Anorganik</h1>
+        
+        <!-- Form Data Pelanggan -->
+        
+            <label for="nama">Nama :</label>
+            <input type="text" id="nama" placeholder="Masukkan nama Anda" style="margin-bottom: 10px;"> 
+        
+            <label for="email">Email :</label>
+            <input type="email" id="email" placeholder="Masukkan email Anda" style="margin-bottom: 10px;">
+        
+            <label for="alamat">Alamat :</label>
+            <textarea id="alamat" rows="3" placeholder="Masukkan alamat Anda" style="margin-bottom: 10px;"></textarea>
+
+        <!-- Form Data Sampah -->
+        
+            <label for="jenisSampah">Kategori Sampah Organik :</label>
+            <select id="jenisSampah" style="margin-bottom: 10px;">
+                <option value="kertas">Gelas Plastik (Rp 700/kg)</option>
+                <option value="plastik">Botol Plastik(Rp 2300/kg)</option>
+                <option value="Sisa Sayur sayuran">Tutup Botol (Rp 1000/kg)</option>
+                <option value="Daun Kering">Plastik Kresek (Rp 500/kg)</option>
+                <option value="Rotan">Kemasan(Rp 700/kg)</option>
+                <option value="Ranting Pohon">Styrofoam Bersih (Rp 3000/kg)</option>
+                <option value="kertas">Seng (Rp 1900/kg)</option>
+                <option value="plastik">Besi(Rp 3400/kg)</option>
+                <option value="Sisa Sayur sayuran">Alumunium (Rp 9000/kg)</option>
+                <option value="Daun Kering">Tembaga (Rp 39000/kg)</option>
+                <option value="Rotan">Per Kasur (Rp 3000/kg)</option>
+                <option value="Ranting Pohon">Arsip (Rp 1700/kg)</option>
+                <option value="kertas">Majalah / Duplek / Karton (Rp 1300/kg)</option>
+                <option value="plastik">Dus / Kardus (Rp 2500/kg)</option>
+                <option value="Sisa Sayur sayuran">Kertas Campur (Rp 1500/kg)</option>
+                <option value="Daun Kering">Duplek telur (Rp 1000/kg)</option>
+                <option value="Rotan">Koran(Rp 3300/kg)</option>
+                <option value="Ranting Pohon">Beling (Rp 2000/kg)</option>
+                <option value="Ranting Pohon">Botol bir bintang ukuran besar (Rp 2500/kg)</option>
+            </select>
+        
+            <label for="berat">Berat (kg) :</label>
+            <input type="number" id="berat" min="0" step="0.1" placeholder="Masukkan berat barang (kg)" style="margin-bottom: 10px;">
+        
+            <button id="tambah" style="margin-left: 150px;">Tambah Sampah lagi</button>
+
+
+        <!-- Struk Pembelian -->
+        <h2>Struk Penjualan Sampah</h2>
+        <div id="struk">
+            <table class="table" border="1" id="userTable">
+                <thead>
+                  <tr>
+                    <th scope="col">Nama</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Alamat</th>
+                    <th scope="col">Kategori Sampah</th>
+                    <th scope="col">Berat</th>
+                    <th scope="col">Aksi</th>
+                  </tr>
+                </thead>
+                <tbody id="tableBody"></tbody> 
+              </table>
+            <p><strong>Nama :</strong> <span id="strukNama"></span></p>
+            <p><strong>Email :</strong> <span id="strukEmail"></span></p>
+            <p><strong>Alamat :</strong> <span id="strukAlamat"></span></p>
+            <p><strong>Kategori Sampah :</strong> <span id="strukSampah"></span></p>
+            <p><strong>Berat :</strong> <span id="strukBerat"></span></p>
+            <ul id="daftarItem"></ul>
+            <p id="totalHarga">Total Harga: Rp 0</p>
+        </div>
+
+        <button id="selesai">Selesai</button><button id="cetakStruk">Cetak Struk</button>
+
+    </div>
+
+    <script src="form2.js"></script>
+</body>
+</html>

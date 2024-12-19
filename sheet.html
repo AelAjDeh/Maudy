@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"
+    />
+
+    <style>
+
+        html{
+        scroll-behavior: smooth;
+        }
+
+        * {
+        box-sizing: border-box;
+        padding: 0;
+        margin: 0;
+        font-family: 'Poppins', sans-serif;
+        text-decoration: none;
+        }
+
+        /* Body Styling */
+        body {
+        font-family: 'Poppins', sans-serif;
+        background-color: #f5f7e5;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 1000px;
+        }
+
+        /* Form Container Styling */
+        .form-container {
+        background-color: #ffffff; /* Putih untuk kontras */
+        padding: 30px;
+        padding-top: 50px;
+        padding-bottom: 50px;
+        border-radius: 15px;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Shadow untuk efek box */
+        width: 600px;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        border: 2px solid #627432; /* Hijau untuk tema */
+        }
+
+        /* Heading */
+        h2 {
+        background-color: #627432;
+        color: #ffffff;
+        font-size: 36px;
+        margin-bottom: 15px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        }
+
+        /* Form Styling */
+        form {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        }
+
+        label {
+        margin-top: 10px;
+        color: #627432;
+        font-size: 16px;
+        display: flex;
+        align-items: left;
+        justify-content: left;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="datetime-local"],
+        textarea,
+        select {
+        width: 100%;
+        padding: 15px;
+        margin-top: 10px;
+        border: 2px solid #627432;
+        border-radius: 15px;
+        font-size: 16px;
+        background-color: #f5f7e5;
+        color: #627432;
+        }
+
+        textarea {
+        font-family: 'Poppins', sans-serif;
+        resize: none;
+        height: 80px;
+        }
+
+        button {
+        width: 100%;
+        padding: 15px;
+        background-color: #627432;
+        color: white;
+        border: none;
+        border-radius: 10px;
+        font-size: 16px;
+        cursor: pointer;
+        margin-top: 20px;
+        transition: transform 0.3s, background-color 0.3s;
+        }
+
+        button:hover {
+        background-color: #506029;
+        transform: scale(1.05);
+        }
+
+        #message {
+        margin-top: 20px;
+        font-size: 16px;
+        font-weight: bold;
+        color: green;
+        padding: 8px;
+        background-color: #eaf6da;
+        border-radius: 10px;
+        border: 2px solid #627432;
+        }
+        </style>
+
+
+  
+    <div class="form-container">
+        <h2>Kritik dan saran</h2>
+    
+
+      
+    <form id="form" class="container m-4 pl-4" method="POST" action= "https://script.google.com/macros/s/AKfycbzAADFoNc_U6zCqY6v-n3ofOvrNVHaKX9BwhefPqz-JrITxtgYIQmViI18djh_Izumg/exec",
+    >
+      <div class="field">
+        <label class="label">timestamp</label>
+        <div class="control" style="width: 300px;">
+          <input
+            class="input"
+            type="datetime-local"
+            placeholder="Your Client Name"
+            name="timestamp"
+          />
+        </div>
+      </div>
+
+      <div class="field">
+        <label class="label">nama</label>
+        <div class="control" style="width: 300px;">
+          <input
+            class="input"
+            type="text"
+            placeholder="Your Client Name"
+            name="nama"
+          />
+        </div>
+      </div>
+
+      <!-- <div class="field">
+        <label class="label">Last Name</label>
+        <div class="control">
+          <input
+            class="input"
+            type="text"
+            placeholder="Your Last Name"
+            name="Last Name"
+          />
+        </div>
+      </div> -->
+
+      <div class="field">
+        <label class="label">Email</label>
+        <div class="control" style="width: 300px;">
+          <input
+            class="input"
+            type="email"
+            placeholder="Your Email"
+            name="email"
+          />
+        </div>
+      </div>
+
+      <div class="field">
+        <label class="label">pesan</label>
+        <div class="control" style="width: 300px;">
+          <input
+            class="input"
+            type="text"
+            placeholder="Your Client Name"
+            name="pesan"
+          />
+        </div>
+      </div>
+
+      <!-- <div class="field">
+        <label class="label">Password</label>
+        <div class="control">
+          <input
+            class="input"
+            type="password"
+            placeholder="Your Password"
+            name="Password"
+          />
+        </div>
+      </div> -->
+
+      <!-- <div class="field">
+        <label class="label">Date of Birth</label>
+        <div class="control">
+          <input
+            class="input"
+            type="date"
+            placeholder="Your Date of Birth"
+            name="DOB"
+          />
+        </div>
+      </div> -->
+
+      <!-- <div class="field">
+        <label class="label">Gender</label>
+        <div class="control">
+          <label class="radio">
+            <input type="radio" name="Gender" value="male" /> Male
+          </label>
+          <label class="radio">
+            <input type="radio" name="Gender" value="female" /> Female
+          </label>
+        </div>
+      </div> -->
+
+      <!-- <div class="field">
+        <label class="label">Agree to Terms</label>
+        <div class="control">
+          <label class="checkbox">
+            <input type="checkbox" name="Agree To Terms" value="yes" /> I agree
+            to the terms and conditions
+          </label>
+        </div>
+      </div> -->
+
+      <!-- <div class="field">
+        <label class="label">Additional Information</label>
+        <div class="control">
+          <textarea
+            class="textarea"
+            placeholder="Any additional information"
+            name="Notes"
+          ></textarea>
+        </div>
+      </div> -->
+
+      <div class="field is-grouped">
+        <div class="control">
+          <button class="button is-primary" type="submit" id="submit-button">
+            Sign Up
+          </button>
+        </div>
+        <div class="control">
+          <button class="button is-danger">Cancel</button>
+        </div>
+      </div>
+    </div>
+    </form>
+
+    
+
+    <div
+      id="message"
+      style="
+        display: none;
+        margin: 20px;
+        font-weight: bold;
+        color: green;
+        padding: 8px;
+        background-color: beige;
+        border-radius: 4px;
+        border-color: aquamarine;
+      "
+    ></div>
+
+
+    <script>
+      document.getElementById("form").addEventListener("submit", function (e) {
+        e.preventDefault(); // Prevent the default form submission
+        document.getElementById("message").textContent = "Submitting..";
+        document.getElementById("message").style.display = "block";
+        document.getElementById("submit-button").disabled = true;
+
+        // Collect the form data
+        var formData = new FormData(this);
+        var keyValuePairs = [];
+        for (var pair of formData.entries()) {
+          keyValuePairs.push(pair[0] + "=" + pair[1]);
+        }
+
+        var formDataString = keyValuePairs.join("&");
+
+        // Send a POST request to your Google Apps Script
+        fetch(
+          "https://script.google.com/macros/s/AKfycbzAADFoNc_U6zCqY6v-n3ofOvrNVHaKX9BwhefPqz-JrITxtgYIQmViI18djh_Izumg/exec",
+          {
+            redirect: "follow",
+            method: "POST",
+            body: formDataString,
+            headers: {
+              "Content-Type": "text/plain;charset=utf-8",
+            },
+          }
+        )
+          .then(function (response) {
+            // Check if the request was successful
+            if (response) {
+              return response; // Assuming your script returns JSON response JSON UNTUK MNYIMPAN DISELURUH JARINGAN menyimpan, membaca, serta menukar informasi dari web server sehingga dapat dibaca oleh para pengguna.
+            } else {
+              throw new Error("Failed to submit the form.");
+            }
+          })
+          .then(function (data) {
+            // Display a success message
+            document.getElementById("message").textContent =
+              "Data submitted successfully!";
+            document.getElementById("message").style.display = "block";
+            document.getElementById("message").style.backgroundColor = "green";
+            document.getElementById("message").style.color = "beige";
+            document.getElementById("submit-button").disabled = false;
+            document.getElementById("form").reset();
+
+            setTimeout(function () {
+              document.getElementById("message").textContent = "";
+              document.getElementById("message").style.display = "none";
+            }, 2600);
+          })
+          .catch(function (error) {
+            // Handle errors, you can display an error message here
+            console.error(error);
+            document.getElementById("message").textContent =
+              "An error occurred while submitting the form.";
+            document.getElementById("message").style.display = "block";
+          });
+      });
+    </script>
+  </body>
+</html>

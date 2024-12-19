@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Halaman Admin - Kelola Barang</title>
+
+    <style>
+
+        html{
+        scroll-behavior: smooth;
+        }
+
+        /* Gaya untuk tabel dan halaman */
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #a2b68f;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #a2b68f;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #333333;
+            margin-bottom: 20px;
+        }
+
+        .stats {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+            padding: 10px;
+            background-color: #eef5e6;
+            border-radius: 8px;
+        }
+
+        .stats div {
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        .search-bar {
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .search-bar input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #cccccc;
+            border-radius: 5px;
+            margin-right: 10px;
+        }
+
+        .search-bar button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #627432;
+            color: white;
+            cursor: pointer;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+        table, th, td {
+            border: 1px solid #cccccc;
+        }
+
+        th, td {
+            text-align: left;
+            padding: 10px;
+        }
+
+        th {
+            background-color: #627432;
+            color: white;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        .actions {
+            display: flex;
+            gap: 10px;
+        }
+
+        .actions button {
+            padding: 5px 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .actions .edit {
+            background-color: #4caf50;
+            color: white;
+        }
+
+        .actions .delete {
+            background-color: #f44336;
+            color: white;
+        }
+        form {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        form input, form select, form button {
+            padding: 10px;
+            border: 1px solid #cccccc;
+            border-radius: 5px;
+        }
+
+        form button {
+            background-color: #627432;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body style="background: url(../assets/img/admin.jpg); background-position: center; background-size: cover; background-repeat: no-repeat; background-attachment: fixed;">
+        <h1 style="color: #627432; display: flex; align-items: center; justify-content: center;">Selamat Datang, Admin!</h1>
+        <p style="display: flex; justify-content: center; align-items: center;">Anda berhasil masuk ke halaman admin.</p>
+
+    <div class="container">
+        <h1 style="color: #627432;">Halaman Admin - Kelola Barang</h1>
+
+        <!-- Statistik -->
+        <div class="stats">
+            <div>Total Barang: <span id="totalBarang">0</span></div>
+            <div>Total Stok: <span id="totalStok">0</span></div>
+        </div>
+
+        <!-- Pencarian Barang -->
+        <div class="search-bar">
+            <input type="text" id="searchBar" placeholder="Cari Barang...">
+        </div>
+
+        <!-- Form Tambah Barang -->
+        <form id="addForm">
+            <input type="text" id="namaBarang" placeholder="Nama Barang" required>
+            <input type="number" id="stokBarang" placeholder="Stok Barang" required min="0">
+            <select id="kategoriBarang" required>
+                <option value="kertas">Sisa Makanan (Rp 4000/kg)</option>
+                <option value="plastik">Sisa Kulit Buah (Rp 5000/kg)</option>
+                <option value="Sisa Sayur sayuran">Sisa Sayur sayuran (Rp 4500/kg)</option>
+                <option value="Daun Kering">Daun Kering (Rp 5500/kg)</option>
+                <option value="Rotan">Rotan (Rp 4000/kg)</option>
+                <option value="Ranting Pohon">Ranting Pohon (Rp 3500/kg)</option>
+                <option value="kertas">Gelas Plastik (Rp 700/kg)</option>
+                <option value="plastik">Botol Plastik(Rp 2300/kg)</option>
+                <option value="Sisa Sayur sayuran">Tutup Botol (Rp 1000/kg)</option>
+                <option value="Daun Kering">Plastik Kresek (Rp 500/kg)</option>
+                <option value="Rotan">Kemasan(Rp 700/kg)</option>
+                <option value="Ranting Pohon">Styrofoam Bersih (Rp 3000/kg)</option>
+                <option value="kertas">Seng (Rp 1900/kg)</option>
+                <option value="plastik">Besi(Rp 3400/kg)</option>
+                <option value="Sisa Sayur sayuran">Alumunium (Rp 9000/kg)</option>
+                <option value="Daun Kering">Tembaga (Rp 39000/kg)</option>
+                <option value="Rotan">Per Kasur (Rp 3000/kg)</option>
+                <option value="Ranting Pohon">Arsip (Rp 1700/kg)</option>
+                <option value="kertas">Majalah / Duplek / Karton (Rp 1300/kg)</option>
+                <option value="plastik">Dus / Kardus (Rp 2500/kg)</option>
+                <option value="Sisa Sayur sayuran">Kertas Campur (Rp 1500/kg)</option>
+                <option value="Daun Kering">Duplek telur (Rp 1000/kg)</option>
+                <option value="Rotan">Koran(Rp 3300/kg)</option>
+                <option value="Ranting Pohon">Beling (Rp 2000/kg)</option>
+                <option value="Ranting Pohon">Botol bir bintang ukuran besar (Rp 2500/kg)</option>
+            </select>
+            <select id="jenisBarang" required>
+                <option value="" disabled selected>Pilih Jenis</option>
+                <option value="Organik">Organik</option>
+                <option value="Anorganik">Anorganik</option>
+            </select>
+            <button type="submit">Tambah Barang</button>
+        </form>
+
+        <!-- Tabel Daftar Barang -->
+        <table>
+            <thead>
+                <tr>
+                    <th>No</th>
+                    <th>Nama Barang</th>
+                    <th>Stok</th>
+                    <th>Kategori</th>
+                    <th>Jenis</th>
+                    <th>Aksi</th>
+                </tr>
+            </thead>
+            <tbody id="barangTable">
+                <!-- Data barang akan ditambahkan di sini -->
+            </tbody>
+        </table>
+        
+    </div>
+
+    <script>
+        // JavaScript untuk menangani form, tabel, dan pencarian
+        const addForm = document.getElementById('addForm');
+        const barangTable = document.getElementById('barangTable');
+        const searchBar = document.getElementById('searchBar');
+        const totalBarang = document.getElementById('totalBarang');
+        const totalStok = document.getElementById('totalStok');
+
+        let barangList = [];
+        let counter = 1;
+
+        // Tambah barang ke tabel
+        addForm.addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            // Ambil nilai dari form
+            const namaBarang = document.getElementById('namaBarang').value.trim();
+            const stokBarang = parseInt(document.getElementById('stokBarang').value);
+            const kategoriBarang = document.getElementById('kategoriBarang').value;
+            const jenisBarang = document.getElementById('jenisBarang').value;
+
+            // Validasi nama duplikat
+            if (barangList.some(barang => barang.nama.toLowerCase() === namaBarang.toLowerCase())) {
+                alert("Nama barang sudah ada!");
+                return;
+            }
+
+            // menambahkan data ke array
+            barangList.push({
+                id: counter,
+                nama: namaBarang,
+                stok: stokBarang,
+                kategori: kategoriBarang,
+                jenis: jenisBarang
+            });
+
+            // Tambahkan data ke tabel
+            renderTable();
+            updateStats();
+
+            // Reset form
+            addForm.reset();
+            counter++;
+        });
+
+        // Render ulang tabel
+        function renderTable() {
+            barangTable.innerHTML = '';
+            barangList.forEach((barang, index) => {
+                const row = `
+                    <tr>
+                        <td>${index + 1}</td>
+                        <td>${barang.nama}</td>
+                        <td>${barang.stok}</td>
+                        <td>${barang.kategori}</td>
+                        <td>${barang.jenis}</td>
+                        <td class="actions">
+                            <button class="edit" onclick="editBarang(${barang.id})">Edit</button>
+                            <button class="delete" onclick="deleteBarang(${barang.id})">Hapus</button>
+                        </td>
+                    </tr>
+                `;
+                barangTable.insertAdjacentHTML('beforeend', row);
+            });
+        }
+
+        // Hapus barang
+        function deleteBarang(id) {
+            barangList = barangList.filter(barang => barang.id !== id);
+            renderTable();
+            updateStats();
+        }
+
+        // Edit barang
+        function editBarang(id) {
+            const barang = barangList.find(barang => barang.id === id);
+            if (barang) {
+                document.getElementById('namaBarang').value = barang.nama;
+                document.getElementById('stokBarang').value = barang.stok;
+                document.getElementById('kategoriBarang').value = barang.kategori;
+                document.getElementById('jenisBarang').value = barang.jenis;
+
+                // Hapus barang lama
+                deleteBarang(id);
+            }
+        }
+
+        // Update statistik
+        function updateStats() {
+            totalBarang.textContent = barangList.length;
+            totalStok.textContent = barangList.reduce((acc, barang) => acc + barang.stok, 0);
+        }
+
+        // Filter tabel berdasarkan pencarian
+        searchBar.addEventListener('input', function() {
+            const searchTerm = searchBar.value.toLowerCase();
+            barangTable.innerHTML = '';
+            barangList
+                .filter(barang => barang.nama.toLowerCase().includes(searchTerm))
+                .forEach((barang, index) => {
+                    const row = `
+                        <tr>
+                            <td>${index + 1}</td>
+                            <td>${barang.nama}</td>
+                            <td>${barang.stok}</td>
+                            <td>${barang.kategori}</td>
+                            <td>${barang.jenis}</td>
+                            <td class="actions">
+                                <button class="edit" onclick="editBarang(${barang.id})">Edit</button>
+                                <button class="delete" onclick="deleteBarang(${barang.id})">Hapus</button>
+                            </td>
+                        </tr>
+                    `;
+                    barangTable.insertAdjacentHTML('beforeend', row);
+                });
+        });
+    </script>
+</body>
+</html>

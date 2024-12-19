@@ -1,0 +1,74 @@
+html{
+    scroll-behavior: smooth;
+  }
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #e7f0da; 
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: #627432; 
+}
+
+/* halaman login */
+.login-container {
+    background-color: #a2b68f; 
+    border-radius: 10px;
+    padding: 20px 30px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    text-align: center;
+}
+
+h2 {
+    color: #627432; /* Hijau sangat gelap */
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #627432; /* Hijau menengah */
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+input:focus {
+    border-color: #627432;
+    outline: none;
+}
+
+button {
+    background-color: #627432; /* Hijau utama */
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    width: 100%;
+}
+
+button:hover {
+    background-color: #4e5a28; /* Versi lebih gelap dari #627432 */
+}
+
+
+/* klo  error maka berwarna merah */
+.error {
+    margin-top: 10px;
+    font-size: 14px;
+    font-weight: bold;
+    color: red;
+}

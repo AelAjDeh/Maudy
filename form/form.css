@@ -1,0 +1,178 @@
+html{
+    scroll-behavior: smooth;
+  }
+
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: popins,sans-serif;
+    text-decoration: none;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f5f7e5; 
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 1500px;
+}
+
+.form-container {
+    background-color: #e9f0d8; 
+    padding: 70px;
+    padding-right: 80px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    width: 700px;
+    text-align: left;
+    border: 2px solid #627432; 
+}
+
+h1 {
+    color: #627432; 
+    font-size: 36px;
+    margin-bottom: 25px;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+h2 {
+    color: #627432; 
+    font-size: 24px;
+    margin-bottom: 20px;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+form {
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+label {
+    margin-top: 10px;
+    color: #627432; 
+    font-size: 16px;
+}
+
+/* input form menurut type */
+input[type="text"],
+input[type="email"],
+input[type="number"],
+
+textarea,
+select {
+    width: 100%;
+    padding: 15px;
+    margin-top: 10px;
+    border: 2px solid #627432; 
+    border-radius: 10px;
+    font-size: 16px;
+    background-color: #f5f7e5; 
+    color: #627432;
+}
+
+textarea {
+    font-family: 'Poppins', sans-serif;
+    resize: none;
+    height: 60px;
+}
+
+button {
+    width: 250px;
+    padding: 10px;
+    background-color: #627432; 
+    color: white;
+    border: none;
+    border-radius: 15px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 20px;
+    margin-left: 15px;
+    margin-bottom: 30px;
+    transition: transform 0.3s, background-color 0.3s;
+    
+}
+
+
+button:hover {
+    background-color: #506029; 
+    transform: scale(1.05);
+}
+
+
+/* struk */
+
+/* Gaya untuk elemen utama */
+#struk {
+    background-color: #f2f5e9; 
+    border: 2px solid #627432; 
+    padding: 20px;
+    border-radius: 10px;
+    font-family: Arial, sans-serif;
+    color: #627432; 
+}
+
+/* Tabel */
+#struk .table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+#struk .table th {
+    background-color: #627432; 
+    color: white;
+    padding: 10px;
+    text-align: left;
+}
+
+#struk .table td {
+    border: 1px solid #627432; 
+    padding: 8px;
+}
+
+/* Teks label */
+#struk p {
+    margin: 5px 0;
+    font-weight: bold;
+}
+
+#daftarItem {
+    list-style-type: disc;
+    margin-left: 20px;
+    color: #627432; 
+}
+
+#totalHarga {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #627432;
+    margin-top: 10px;
+}
+
+/* responsif */
+@media print {
+    body * {
+        visibility: hidden;
+    }
+
+    #struk, #struk * {
+        visibility: visible;
+    }
+
+    #struk {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+    }
+}

@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bank Sampah</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <style>
+
+html{
+  scroll-behavior: smooth;
+}
+
+*{
+          box-sizing: border-box;
+          padding: 0;
+          margin: 0;
+          font-family: popins,sans-serif;
+          text-decoration: none;
+      }
+
+      body{
+          font-family: "Poppins", sans-serif;
+          overflow-x: hidden;
+          background-color: #ffffff;
+      }
+
+      .hero-header {
+      width: 100%;
+      min-height: 1500px;
+      background: #ffffff;
+      }
+
+      .wrapper{
+          width: 1500px;
+          max-width: 95%;
+          margin: 0 auto;
+          padding: 0 ;
+      }
+
+      header{
+          padding: 40px 0 30px;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          flex-wrap: wrap;
+      }
+
+      .navbar{
+          background-color: #627432;
+      }
+
+      .navbar-brand-me-auto{
+          width: 70px;
+      }
+
+      .login-button {
+          background-color: #d7cc6d;
+          color: #000000;
+          font-size: 14px;
+          padding: 8px 20px;
+          border-radius: 50px;
+          text-decoration: none;
+          transition: 0.3s background-color;
+      }
+
+      .login-button:hover {
+            background-color: #ada44e;
+      }
+
+      .navbar-toggler {
+          border: none;
+          font-size: 1.25rem;
+          
+      }
+
+      .navbar-toggler:focus, .btn-clos:focus {
+          box-shadow: none;
+          outline: none;
+      }
+
+      .nav-link {
+          color: #ffffff;
+          font-size: 500;
+          position: relative;
+      }
+
+      .nav-link:hover, .nav-link.active {
+          color: #dbdada;
+      }
+
+      .nav-link::before{
+          content: "";
+          position: absolute;
+          bottom: 0;
+          left: 50%;
+          transform: translateX(-50%);
+          width: 0;
+          height: 2px;
+          background-color: #e6de98;
+          visibility: hidden;
+          transition: 0.3s ease-in-out;
+      }
+
+      .nav-link:hover::before, .nav-link.active::before{
+          width: 100%;
+          visibility: visible;
+      }
+
+      section h2 {
+        margin-bottom: 50px;
+        margin-left: 210px;
+      }
+
+      /* card flip */
+      /* Google fonts(Poppins) */
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+      * {
+        font-family: "Poppins", sans-serif;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+          display: block;
+          min-height: 100vh; 
+          overflow-x: hidden;
+      }
+
+      /* card flip */
+      .card-containerflip {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        gap: 20px; /* jarak card satu dngn yang lain */
+      }
+
+      .wrapper-card {
+        width: 300px; 
+        perspective: 1000px; 
+      }
+
+      .card-flip {
+        position: relative;
+        width: 100%;
+        height: 400px; /* ini buat tinggi card */
+        transform-style: preserve-3d;
+        transition: transform 0.6s;
+      }
+
+      .card-flip:hover {
+        transform: rotateY(180deg);
+      }
+
+      /* ini untuk card flip  */
+      .card-front, .card-back { 
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        backface-visibility: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        text-align: center;
+        border-radius: 10px;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+      }
+
+      .card-front {
+        background-color: #627432;
+      }
+
+      .card-back {
+        background-color: #ffffff;
+        transform: rotateY(180deg);
+      }
+
+
+      .card-container {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        margin: 20px 0;
+      }
+
+      .wrapper-card {
+        width: 300px;
+        height: 400px;
+        perspective: 800px;
+        padding: 30px;
+      }
+
+      .wrapper-card .card-flip {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        cursor: pointer;
+        transform-style: preserve-3d;
+        transition: 1.5s;
+      }
+
+      .wrapper-card:hover > .card-flip {
+        transform: rotateY(180deg);
+      }
+
+      .card-front,
+      .card-back {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        border-radius: 10px;
+        box-shadow: 0 0 5px 2px rgba(50, 50, 50, 0.2);
+        backface-visibility: hidden;
+      }
+
+      .card-front {
+        background: url(img.jpg);
+        background-size: cover;
+        background-position: center;
+      }
+
+      .card-back {
+        background: #eaf9bd;
+        color: #151515;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+        padding: 20px;
+        text-align: center;
+        transform: rotateY(180deg);
+      }
+
+
+      /* footer */
+      
+      footer {
+          background-color: #627432;
+          color: #fff;
+          padding: 40px 0;
+         
+      }
+
+      .footer-container {
+          display: flex;
+          justify-content: space-around;
+          flex-wrap: wrap;
+          text-align: left;
+      }
+
+      .footer-logo {
+          flex: 1;
+          text-align: center;
+      }
+
+      .footer-logo i {
+          font-size: 36px;
+          color: #33cc33;
+          margin-bottom: 10px;
+      }
+
+      .footer-logo h3 {
+          margin: 10px 0;
+          font-size: 24px;
+      }
+
+      .footer-logo p {
+          color: #ffffff;
+      }
+
+      .footer-socials {
+          display: flex;
+          justify-content: center;
+          margin: 20px 0;
+      }
+
+      .footer-socials a {
+          color: #fff;
+          margin: 0 10px;
+          font-size: 24px;
+          transition: color 0.3s ease;
+      }
+
+      .footer-socials a:hover {
+          color: #33cc33;
+      }
+
+      .footer-links {
+          display: flex;
+          flex: 2;
+          justify-content: space-around;
+      }
+
+      .footer-section ul {
+          list-style: none;
+          padding: 0;
+      }
+
+      .footer-section ul li {
+          margin-bottom: 10px;
+      }
+
+      .footer-section ul li a {
+          color: #ffffff;
+          text-decoration: none;
+          transition: color 0.3s ease;
+      }
+
+      .footer-section ul li a:hover {
+          color: #fff;
+      }
+
+      .footer-bottom {
+          text-align: center;
+          margin-top: 20px;
+          padding-top: 20px;
+          border-top: 1px solid #ffffff; 
+          color: #ffffff;
+      }
+      @media(max-width: 768px){
+        .Earth h2{
+      
+          margin-left: 10px;
+      }
+
+      }
+
+    </style>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Afacad+Flux:wght@100..1000&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">);
+</head>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+<body>
+      <div class="hero-header">
+        <div class="wrapper">
+            <header>
+                
+                    <nav class="navbar navbar-expand-lg fixed-top">
+                        <div class="container-fluid">
+                          <a class="navbar-brand me-auto" href="../UUK2/assets/img/logo.png"><b style="color: #ffffff;">eco wise bank</b></a>
+                          
+                          <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel" style="transition: 3s; background-color: #627432a0;">
+                            <div class="offcanvas-header">
+                              <h5 class="offcanvas-title" id="offcanvasNavbarLabel" style="color: #ffffff;">eco wise bank</h5>
+                              <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close" style="color: #ffffff;"></button>
+                            </div>
+                            <div class="offcanvas-body">
+                              <ul class="navbar-nav justify-content-center flex-grow-1 pe-3">
+                                <li class="nav-item">
+                                  <a class="nav-link mx-lg-2 " aria-current="page" style="color: #ffffff;" href="index.html">Beranda</a>
+                                </li>
+                                <li class="nav-item">
+                                  <a class="nav-link mx-lg-2" href="about.html">About</a>
+                                </li>
+                                <li class="nav-item">
+                                  <a class="nav-link mx-lg-2" href="alamat.html">alamat</a>
+                                </li>
+                                <li class="nav-item">
+                                  <a class="nav-link mx-lg-2" href="sheet.html">Kritik & Saran</a>
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+                          <a href="../UUK2/admin/login.html" class="login-button">Admin</a>
+                          <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar"aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                          </button>
+                        </div>
+                    </nav>
+                  
+                <section> 
+                    <br>
+                    <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-inner">
+                          <div class="carousel-item active">
+                            <img src="../UUK2/assets/img/1.png" class="d-block w-100" alt="bg1">
+                          </div>
+                          <div class="carousel-item">
+                            <img src="../UUK2/assets/img/3.png" class="d-block w-100" alt="bg2">
+                          </div>
+                          <div class="carousel-item">
+                            <img src="../UUK2/assets/img/2.png" class="d-block w-100" alt="bg3">
+                          </div>
+                        </div>
+                    </div>
+                </section>
+            </header>
+        </section>
+
+        <section class="Earth">
+          <div class="container">
+            <div class="row">
+              <div class="col">
+                <h2>"Earth is our only home, let’s protect it together."</h2>
+              </div>
+            </div>
+          </div>
+        </section>
+          
+        <section style="background-color: #627432;">
+          <div class="row row-cols-1 row-cols-md-2 g-4">
+            <div class="col">
+              <div class="card">
+                <img src="../UUK2/assets/img/organik.jpg" class="card-img-top" alt="Organik">
+                <div class="card-body">
+                  <h4 class="card-title"><b>Organik</b></h4>
+                  <p class="card-text">Sampah organik adalah sampah yang berasal dari sisa mahkluk hidup yang mudah terurai secara alami tanpa proses campur tangan manusia untuk dapat terurai. Sampah organik bisa dikatakan sebagai sampah ramah lingkungan.</p>
+                  <a href="organik.html">Selengkapnya →</a>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card">
+                <img src="../UUK2/assets/img/anorganik.jpg" class="card-img-top" alt="Anorganik">
+                <div class="card-body">
+                  <h4 class="card-title"><b>Anorganik</b></h4>
+                  <p class="card-text">Sampah anorganik adalah plastik, botol / kaleng minuman, kresek, ban bekas, besi, kaca, kabel, barang elektronik, bohlam lampu dan plastik. Sampah anorganik sulit terurai tetapi dapat anda manfaatkan kembali, jangan sampai dibiarkan begitu saja.</p>
+                  <a href="anorganik.html">Selengkapnya →</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <br> <br> 
+        </section>
+
+        <!-- card flip -->
+         <div class="card-containerflip">
+          <div class="wrapper-card">
+            <div class="card-flip">
+              <div class="card-front" style="background-color: #627432;">
+                <img src="../UUK2/assets/img/tong_or.png" alt=""style="margin-top: 50px;"> 
+              </div>
+              <div class="card-back">
+                <h1>Organik</h1>
+                <p>
+                  Sampah organik adalah aneka sampah yang bisa diuraikan secara alami oleh lingkungan karena berasal dari sisa-sisa makhluk hidup. Contohnya dedaunan, sisa sayur dan buah. Jenis sampah ini masih bisa diuraikan secara alami oleh hewan pengurai. 
+                </p>
+              </div>
+            </div>
+          </div>
+        
+          <div class="wrapper-card">
+            <div class="card-flip">
+              <div class="card-front" style="background-color: #627432;">
+                <img src="../UUK2/assets/img/tong_an.png" alt="" style="margin-top: 50px;"> 
+              </div>
+              <div class="card-back">
+                <h1>Anorganik</h1>
+                <p>
+                  sampah organik, jenis anorganik ini meliputi sampah-sampah yang sulit diuraikan secara alami hingga membutuhkan waktu ratusan tahun hingga tidak bisa sama sekali terurai. Contoh lainnya adalah sampah plastik, botol plastik. 
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="wrapper-card">
+            <div class="card-flip">
+              <div class="card-front" style="background-color: #627432;">
+                <img src="../UUK2/assets/img/tong_b3.png" alt="" style="margin-top: 50px;"> 
+              </div>
+              <div class="card-back">
+                <h1>B3</h1>
+                <p>
+                 Sampah B3 Adalah sampah-sampah dari bahan kimia berbahaya dan beracun.Jadi, kemasan-kemasan yang mengandung senyawa kimia berbahaya ini tidak boleh dibuang sembarangan. Harus dipisahkan dan diamankan karena potensi bahayanya cukup tinggi.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+       
+          
+        <section>
+          <footer>
+            <div class="footer-container">
+                <div class="footer-logo">
+                    <i class="fas fa-leaf"></i>
+                    <h3>eco wise bank</h3>
+                    <p>Bank Sampah Indonesia</p>
+                </div>
+                <div class="footer-socials" style="padding-right: 32px;">
+                  <ul>
+                    <a href="https://fonts.google.com/selection/embed"><i class="fab fa-facebook"></i></a>
+                    <a href="https://fonts.google.com/selection/embed"><i class="fab fa-instagram"></i></a>
+                    <a href="https://fonts.google.com/selection/embed"><i class="fab fa-tiktok"></i></a>
+                  </ul>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-section">
+                        <h4>eco wise bank website</h4>
+                        <ul> <br>
+                            <li><a href="about.html">Tentang kami</a></li>
+                            <li><a href="kritiksaran.html">Kritik dan Saran</a></li>
+                            <li><a href="#">Kontak</a></li>
+                        </ul>
+                      </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p style="color: #ffffff;">© Copyright 2023 Bank Sampah Indonesia. All rights reserved</p>
+            </div>
+        </footer>
+      </div>
+      </section>
+
+</body>
+</html>
